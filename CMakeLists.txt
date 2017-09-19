@@ -5,7 +5,7 @@ set(CMAKE_BUILD_TYPE Debug)
 
 file(GLOB_RECURSE SOURCES "src/*.c")
 
-set(EXECUTABLE_OUTPUT_PATH ../)
+set(EXECUTABLE_OUTPUT_PATH ./)
 
 add_executable (
 	life ${SOURCES}
