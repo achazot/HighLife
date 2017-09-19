@@ -322,19 +322,19 @@ const char *get_filename_ext(const char *filename)
 int main( int argc, char* argv[])
 {
 	GLFWwindow* window;
-  if (!glfwInit()) return -1; // Who u tryna fool ??
+  if (!glfwInit()) return EXIT_FAILURE; // Who u tryna fool ??
 
 	GLFWmonitor* monitor = glfwGetPrimaryMonitor();
 	const GLFWvidmode* mode = glfwGetVideoMode(monitor);
 	g_width = mode->width;
 	g_height = mode->height;
 
-	window = glfwCreateWindow(g_width, g_height, "lisa", monitor, NULL); // for my love
+	window = glfwCreateWindow(g_width, g_height, "lisa", monitor, NULL);
   //window = glfwCreateWindow(g_width, g_height, "lisa", NULL, NULL);
   if (!window)
   {
     glfwTerminate();
-    return -1;
+    return EXIT_FAILURE;
   }
 
   glfwMakeContextCurrent(window);
