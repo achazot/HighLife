@@ -1,5 +1,7 @@
 # HighLife
 
+![Preview](life.png)
+
 ## Dependencies
  * GLFW3
  * OpenGL
