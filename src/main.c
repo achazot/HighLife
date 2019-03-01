@@ -682,10 +682,10 @@ int main( int argc, char* argv[])
 				glColor4f(palette[grid[x][y].palindex].r, palette[grid[x][y].palindex].g, palette[grid[x][y].palindex].b, grid[x][y].h);
 				float fx = (float)x + 0.5f;
 				float fy = (float)y + 0.5f;
-	      glVertex3f(0.5f + fx, -0.5f + fy, 0.f);
-	      glVertex3f(-0.5f + fx, -0.5f + fy, 0.f);
+				glVertex3f(0.5f + fx, -0.5f + fy, 0.f);
+				glVertex3f(-0.5f + fx, -0.5f + fy, 0.f);
 				glVertex3f(-0.5f + fx, 0.5f + fy, 0.f);
-	      glVertex3f(0.5f + fx, 0.5f + fy, 0.f);
+				glVertex3f(0.5f + fx, 0.5f + fy, 0.f);
 			}
 
 			// the brush
@@ -720,9 +720,9 @@ int main( int argc, char* argv[])
 					float fx = k + 0.5f;
 					float fy = l + 0.5f;
 					glVertex3f(0.5f + fx, -0.5f + fy, 0.f);
-		      glVertex3f(-0.5f + fx, -0.5f + fy, 0.f);
+					glVertex3f(-0.5f + fx, -0.5f + fy, 0.f);
 					glVertex3f(-0.5f + fx, 0.5f + fy, 0.f);
-		      glVertex3f(0.5f + fx, 0.5f + fy, 0.f);
+					glVertex3f(0.5f + fx, 0.5f + fy, 0.f);
 				}
 			}
 
@@ -730,18 +730,18 @@ int main( int argc, char* argv[])
 			glColor3f(1.f,1.f,1.f);
 			float fx = g_mx + 0.5f;
 			float fy = g_my + 0.5f;
-      glVertex3f(0.75f + fx, -0.75f + fy, 0.f);
-      glVertex3f(-0.75f + fx, -0.75f + fy, 0.f);
+			glVertex3f(0.75f + fx, -0.75f + fy, 0.f);
+			glVertex3f(-0.75f + fx, -0.75f + fy, 0.f);
 			glVertex3f(-0.75f + fx, 0.75f + fy, 0.f);
-      glVertex3f(0.75f + fx, 0.75f + fy, 0.f);
+			glVertex3f(0.75f + fx, 0.75f + fy, 0.f);
 
 			glColor3f(grid[g_mx][g_my].h*(palette[grid[g_mx][g_my].palindex].r), grid[g_mx][g_my].h*(palette[grid[g_mx][g_my].palindex].g), grid[g_mx][g_my].h*(palette[grid[g_mx][g_my].palindex].b));
 			fx = g_mx + 0.5f;
 			fy = g_my + 0.5f;
 			glVertex3f(0.5f + fx, -0.5f + fy, 0.f);
-      glVertex3f(-0.5f + fx, -0.5f + fy, 0.f);
+			glVertex3f(-0.5f + fx, -0.5f + fy, 0.f);
 			glVertex3f(-0.5f + fx, 0.5f + fy, 0.f);
-      glVertex3f(0.5f + fx, 0.5f + fy, 0.f);
+			glVertex3f(0.5f + fx, 0.5f + fy, 0.f);
 
 			// the buffer
 			int k,l;
@@ -756,9 +756,9 @@ int main( int argc, char* argv[])
 						fx = g_mx + k + 0.5f;
 						fy = g_my + l + 0.5f;
 						glVertex3f(0.5f + fx, -0.5f + fy, 0.f);
-			      glVertex3f(-0.5f + fx, -0.5f + fy, 0.f);
+						glVertex3f(-0.5f + fx, -0.5f + fy, 0.f);
 						glVertex3f(-0.5f + fx, 0.5f + fy, 0.f);
-			      glVertex3f(0.5f + fx, 0.5f + fy, 0.f);
+						glVertex3f(0.5f + fx, 0.5f + fy, 0.f);
 					}
 				}
 			}
