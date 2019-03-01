@@ -11,7 +11,7 @@ Command-line options `./life -h`
 Controls `./life -hc`  
 
 ## License
-his project is licensed under the terms of the BALEC license.
+his project is licensed under the terms of the [BALEC license](LICENSE).
 
 ## TODO  
 
