@@ -211,7 +211,7 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 						buffer = malloc(width * sizeof(cell_t*));
 						int x,y;
 						for (x=0;x<width;x++)
-							buffer[x]  = malloc(height * sizeof(cell_t));
+							buffer[x] = malloc(height * sizeof(cell_t));
 						for (y=0;y<height;y++)
 						for (x=0;x<width;x++)
 						{
@@ -233,7 +233,7 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 						buffer = malloc(width * sizeof(cell_t*));
 						int x,y;
 						for (x=0;x<width;x++)
-							buffer[x]  = malloc(height * sizeof(cell_t));
+							buffer[x] = malloc(height * sizeof(cell_t));
 						for (y=0;y<height;y++)
 						for (x=0;x<width;x++)
 						{
@@ -294,7 +294,7 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 // Cursor callbacks
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
-  if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
+	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
 		g_plot = 1;
 	else if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_RELEASE)
 		g_plot = 0;
@@ -313,16 +313,16 @@ static void cursor_position_callback(GLFWwindow* window, double xpos, double ypo
 // Useful
 const char *get_filename_ext(const char *filename)
 {
-    const char *dot = strrchr(filename, '.');
-    if(!dot || dot == filename) return "";
-    return dot + 1;
+	const char *dot = strrchr(filename, '.');
+	if(!dot || dot == filename) return "";
+	return dot + 1;
 }
 
-// Exit point
+
 int main( int argc, char* argv[])
 {
 	GLFWwindow* window;
-  if (!glfwInit()) return EXIT_FAILURE; // Who u tryna fool ??
+	if (!glfwInit()) return EXIT_FAILURE; // Who u tryna fool ??
 
 	GLFWmonitor* monitor = glfwGetPrimaryMonitor();
 	const GLFWvidmode* mode = glfwGetVideoMode(monitor);
@@ -330,15 +330,15 @@ int main( int argc, char* argv[])
 	g_height = mode->height;
 
 	window = glfwCreateWindow(g_width, g_height, "lisa", monitor, NULL);
-  //window = glfwCreateWindow(g_width, g_height, "lisa", NULL, NULL);
-  if (!window)
-  {
-    glfwTerminate();
-    return EXIT_FAILURE;
-  }
+	//window = glfwCreateWindow(g_width, g_height, "lisa", NULL, NULL);
+	if (!window)
+	{
+		glfwTerminate();
+		return EXIT_FAILURE;
+	}
 
-  glfwMakeContextCurrent(window);
-  glfwSwapInterval(1); // does not work
+	glfwMakeContextCurrent(window);
+	glfwSwapInterval(1); // does not work
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN); // sometimes work
 
 	glfwSetKeyCallback(window, key_callback);
@@ -356,7 +356,6 @@ int main( int argc, char* argv[])
 	while (g_restart)
 	{
 
-		// self-explanatory
 		int norand = 0;
 		int endless = 1;
 		int pal = 0;
@@ -428,10 +427,10 @@ int main( int argc, char* argv[])
 			d = opendir("data/palettes");
 			if (d)
 			{
-			  while ((dir = readdir(d)) != NULL)
+				while ((dir = readdir(d)) != NULL)
 					if (strcmp(get_filename_ext(dir->d_name),"pal")==0)
 						strcpy(filelist[nfiles++], dir->d_name);
-			  closedir(d);
+				closedir(d);
 			}
 			else
 			{
@@ -446,8 +445,8 @@ int main( int argc, char* argv[])
 			}
 
 			printf ("%d palettes in data folder.\n", nfiles);
-		  strcpy (file,"data/palettes/");
-		  strcat (file,filelist[rand()%nfiles]);
+			strcpy (file,"data/palettes/");
+			strcat (file,filelist[rand()%nfiles]);
 		}
 
 		FILE * fp;
@@ -519,8 +518,8 @@ int main( int argc, char* argv[])
 		// double ctime_render;
 
 		// run forever
-	  while (g_continue)
-	  {
+		while (g_continue)
+		{
 			if(glfwWindowShouldClose(window)) // not quite forever
 			{
 				g_continue = 0;
@@ -581,8 +580,8 @@ int main( int argc, char* argv[])
 					}
 
 					//rules
-					if      (agrid[x][y].h == 1.f && (sum <  l_surv_min || sum >  l_surv_max)) grid[x][y].h -= fade?FDEC:1.f;
-					else if (agrid[x][y].h == 1.f || (agrid[x][y].h <  1.f && sum >= l_birth_min && sum <= l_birth_max))
+					if      (agrid[x][y].h == 1.f && (sum < l_surv_min || sum > l_surv_max)) grid[x][y].h -= fade?FDEC:1.f;
+					else if (agrid[x][y].h == 1.f || (agrid[x][y].h < 1.f && sum >= l_birth_min && sum <= l_birth_max))
 					{
 						grid[x][y].h = 1.f;
 						int pi;
@@ -767,11 +766,11 @@ int main( int argc, char* argv[])
 
 			glfwSwapBuffers(window);
 			glfwPollEvents();
-	  }
+		}
 	}
 
-  glfwTerminate();
+	glfwTerminate();
 
 
-  return EXIT_SUCCESS;
+	return EXIT_SUCCESS;
 }
