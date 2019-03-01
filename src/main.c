@@ -1,19 +1,6 @@
-//
-// Hello
-// This is a rather dirty and unoptimized Larger than Life-like cellular automaton
-// Dirty and unoptimized but cool nonetheless
-// this piece of work is not licensed as I made this for fun
-// Hope you'll like it
-// to compile you need GLFW3 and standard unix libs provided in almost all linux distros
-// warning: may empty a laptop battery in 10 minutes
-//
-// TODO list:
-//      - add scenario saving/loading
-//      - center buffer around cursor
-//      - windowed mode
-//
-// for any info, feel free to contact me at chazot.alban@gmail.com
-// 2016, dibi
+// HighLife
+// 2016-2019, dibi
+// see LICENSE for legal infos.
 
 #define GLFW_INCLUDE_GLU
 
