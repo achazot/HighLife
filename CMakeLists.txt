@@ -11,6 +11,10 @@ add_executable (
 	life ${SOURCES}
 )
 
+add_custom_command(
+	TARGET life POST_BUILD COMMAND cp -a ${CMAKE_SOURCE_DIR}/data $<TARGET_FILE_DIR:life>
+)
+
 # ------------------------------------------------------------------------------
 # libs
 # ------------------------------------------------------------------------------
