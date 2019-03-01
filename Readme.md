@@ -22,3 +22,5 @@ Controls `./life -hc`
  * render to texture from cpu
  * threading
  * alpha masking instead of redrawing
+ * min. OpenGL 3 api support
+ 
