@@ -2,9 +2,16 @@
 
 ![Preview](life.png)  
 
-## Dependencies  
- * GLFW3  
- * OpenGL  
+## Dependencies
+ * GLFW3 (`sudo apt-get install libglfw3-dev` on Debian based distribution)
+ * OpenGL (`sudo apt-get install libgl1-mesa-dev libglu1-mesa-dev` on Debian based distribution)
+
+## Building & Run
+
+*With CMake installed*
+1. `$ cmake .`
+2. `$ make`
+3. `$ ./build/life`
 
 ## Help  
 Command-line options `./life -h`  
