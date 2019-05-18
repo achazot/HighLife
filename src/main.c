@@ -539,14 +539,13 @@ int main( int argc, char* argv[])
 			if (!g_pause || g_oneframe)
 			{
 				g_oneframe = 0;
+				float fading = fade ? FCOEF : 0;
 				for (y=0;y<g_sizey;y++)
 				for (x=0;x<g_sizex;x++)
 				{
 					//fade if dead
-					if (agrid[x][y].h < 1.f && agrid[x][y].h > 0.01f && fade)
-						grid[x][y].h *= FCOEF;
-					else if (agrid[x][y].h < 1.f && agrid[x][y].h > 0.01f)
-						grid[x][y].h = 0.f;
+					if (agrid[x][y].h < 1.f && agrid[x][y].h > 0.01f)
+						grid[x][y].h *= fading;
 
 					int sum = 0;
 					int i,j;
